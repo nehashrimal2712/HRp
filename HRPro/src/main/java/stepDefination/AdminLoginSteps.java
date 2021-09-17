@@ -17,16 +17,18 @@ public class AdminLoginSteps extends CommonMethods {
 		obj.openChromeBrowser("https://admin-demo.nopcommerce.com/login","C:/Users/Sumeet Jain/Desktop/downs/chromed/chromedriver.exe");
 		obj.maximzeBrowser();
 		obj.implicitWait(15);
+		obj.clearTextField(AdminLoginObject.login_email);
+		obj.clearTextField(AdminLoginObject.login_password);
 		}
 	
 	@And("user enters correct email id")
 	public void user_enters_correct_email_id() {
-		obj.enterText(AdminLoginObject.login_adminEmail, "admin@yourstore.com");
+		obj.enterText(AdminLoginObject.login_email, "admin@yourstore.com");
 	}
 	
 	@And("user enters correct password")
 	public void user_enters_correct_password() {
-		obj.enterText(AdminLoginObject.login_adminPassword, "admin");
+		obj.enterText(AdminLoginObject.login_password, "admin");
 	}
 	
 	@And("user clicks on Login Button")

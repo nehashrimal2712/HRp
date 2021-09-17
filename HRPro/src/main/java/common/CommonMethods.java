@@ -67,6 +67,11 @@ public class CommonMethods {
 		Thread.sleep(time);
 	}
 	
+	public void clearTextField(By locator) {
+		driver.findElement(locator).clear();
+	}
+	
+	
 	public void verifyTitle(String title){
 		String actualTitle = driver.getTitle();
 		if(title.equals(actualTitle)){
