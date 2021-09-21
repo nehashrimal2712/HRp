@@ -45,6 +45,7 @@ public class CommonMethods {
 	public void openChromeBrowser(String URL , String path){
 		System.setProperty("webdriver.chrome.driver",setDriverPath(path) );
 		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
 		driver.get(URL);
 	}
 	
@@ -54,6 +55,9 @@ public class CommonMethods {
 		driver.get(URL);
 	}
 	
+	public void closeAllBrowser() {
+		driver.quit();
+	}
 	
 	/*This method is used for verifying the 
 	 * Title of any WebPage
